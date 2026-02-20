@@ -1,5 +1,7 @@
 package Library00.FnList;
 
+import java.util.function.Consumer;
+
 public class FnList<T> {
 //
     private Node root;
@@ -45,6 +47,14 @@ public class FnList<T> {
 	    res += 1; xs = xs.tl();
 	}
 	return res;
+    }
+
+    public void foritm(Consumer<T> work) {
+        FnList<T> cur = this;
+        while (cur.consq()) {
+            work.accept(cur.hd());
+            cur = cur.tl();
+        }
     }
 //
 } // end of [public class FnList<T>{...}]
