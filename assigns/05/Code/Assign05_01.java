@@ -1,4 +1,4 @@
-import MyLibrary.FnList.*;
+import Library00.FnList.*;
     
 import java.util.Random;
 import java.util.function.Function;

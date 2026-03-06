@@ -1,7 +1,7 @@
-package Library.MyStack;
+package Library00.MyStack;
 
-import Library.FnList.*;
-import Library.MyRefer.*;
+import Library00.FnList.*;
+//import Library00.MyRefer.*;
 import java.util.function.Consumer;
 import java.util.function.BiConsumer;
 
@@ -57,7 +57,7 @@ public abstract class MyStackBase<T> implements MyStack<T> {
 	System.out.print(")");
     }
 //
-    public void
+	/*  public void
     rforitm(Consumer<? super T> work) {
 /*
         HX: this does NOT work!!!
@@ -66,7 +66,7 @@ public abstract class MyStackBase<T> implements MyStack<T> {
 	foritm(itm -> itms = new FnList(itm, itms));
 	itms.foritm(work);
 */
-        final
+     /*   final
 	MyRefer<FnList<T>> itms =
 	    new MyRefer<FnList<T>>(new FnList<T>());
 	foritm(
@@ -76,7 +76,7 @@ public abstract class MyStackBase<T> implements MyStack<T> {
 	(itms.get$raw()).foritm(work);
     }
 //
-    public void
+    /*public void
     irforitm(BiConsumer<Integer, ? super T> work) {
         final
 	MyRefer<FnList<T>> itms =
@@ -87,5 +87,7 @@ public abstract class MyStackBase<T> implements MyStack<T> {
         ); // end of [foritm]
 	(itms.get$raw()).iforitm(work);
     }
+	*/
 //
-} // end of [public abstract class MyStackBase<T>{...}]
+ // end of [public abstract class MyStackBase<T>{...}]
+}

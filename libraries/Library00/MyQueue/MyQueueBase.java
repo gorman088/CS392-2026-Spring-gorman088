@@ -1,7 +1,6 @@
-package Library.MyQueue;
+package Library00.MyQueue;
 
-import Library.FnList.*;
-import Library.MyRefer.*;
+import Library00.FnList.*;
 import java.util.function.Consumer;
 import java.util.function.BiConsumer;
 
@@ -10,7 +9,7 @@ public abstract class MyQueueBase<T> implements MyQueue<T> {
     public
     boolean isEmpty()
     {
-	return (size() <= 0);
+	return (this.size() <= 0);
     }
 //
     public T top$opt() {
@@ -39,7 +38,7 @@ public abstract class MyQueueBase<T> implements MyQueue<T> {
 
     public void enque$exn(T itm) throws MyQueueFullExn {
         boolean res = enque$opt(itm);
-	if (!res) throw new MyQueueFullExn(); else return;
+	if (!res) throw new MyQueueFullExn(); // else return;
     }
 //
     public void System$out$print() {
@@ -55,30 +54,6 @@ public abstract class MyQueueBase<T> implements MyQueue<T> {
 	  }
 	);
 	System.out.print(")");
-    }
-//
-    public void rforitm
-	(Consumer<? super T> work) {
-        final
-	MyRefer<FnList<T>> itms =
-	    new MyRefer<FnList<T>>(new FnList<T>());
-	foritm(
-	  itm ->
-	  itms.set$raw(new FnList<T>(itm, itms.get$raw()))
-        ); // end of [foritm]
-	(itms.get$raw()).foritm(work);
-    }
-//
-    public void irforitm
-	(BiConsumer<Integer, ? super T> work) {
-        final
-	MyRefer<FnList<T>> itms =
-	    new MyRefer<FnList<T>>(new FnList<T>());
-	foritm(
-	  itm ->
-	  itms.set$raw(new FnList<T>(itm, itms.get$raw()))
-        ); // end of [foritm]
-	(itms.get$raw()).iforitm(work);
     }
 //
 } // end of [public abstract class MyQueueBase<T>{...}]

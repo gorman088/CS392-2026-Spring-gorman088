@@ -1,4 +1,4 @@
-import Library.MyStack.*;
+import Library00.MyStack.*;
 
 public class MyStackListTest {
     public static void main(String[] args) {

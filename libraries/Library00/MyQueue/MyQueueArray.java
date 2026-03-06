@@ -1,4 +1,4 @@
-package Library.MyQueue;
+package Library00.MyQueue;
 
 import java.util.function.Consumer;
 import java.util.function.BiConsumer;
@@ -61,7 +61,6 @@ public class MyQueueArray<T> extends MyQueueBase<T> {
     @Override
     public void
 	foritm(Consumer<? super T> work) {
-	int m = nitm - 1;
 	int n = itms.length;
 	for (int i = 0; i < nitm; i += 1) {
 	    work.accept(itms[(frst+i)%n]);
@@ -72,7 +71,6 @@ public class MyQueueArray<T> extends MyQueueBase<T> {
     @Override
     public void
 	iforitm(BiConsumer<Integer, ? super T> work) {
-	int m = nitm - 1;
 	int n = itms.length;
 	for (int i = 0; i < nitm; i += 1) {
 	    work.accept(i, itms[(frst+i)%n]);
@@ -83,7 +81,6 @@ public class MyQueueArray<T> extends MyQueueBase<T> {
     @Override
     public void
 	rforitm(Consumer<? super T> work) {
-	int m = nitm - 1;
 	int n = itms.length;
 	for (int i = 0; i < nitm; i += 1) {
 	    work.accept(itms[(last-1-i)%n]);
@@ -94,7 +91,6 @@ public class MyQueueArray<T> extends MyQueueBase<T> {
     @Override
     public void
 	irforitm(BiConsumer<Integer, ? super T> work) {
-	int m = nitm - 1;
 	int n = itms.length;
 	for (int i = 0; i < nitm; i += 1) {
 	    work.accept(i, itms[(last-1-i)%n]);

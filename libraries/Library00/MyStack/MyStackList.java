@@ -1,4 +1,4 @@
-package Library.MyStack;
+package Library00.MyStack;
 
 import java.util.function.Consumer;
 import java.util.function.BiConsumer;
