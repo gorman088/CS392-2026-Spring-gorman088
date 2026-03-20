@@ -60,22 +60,74 @@ public class Quiz01_04 {
         }
         return sorted;
     }
+
+    // small class used only for parity sorting test
+    static class PInt implements Comparable<PInt> {
+        int x;
+
+        PInt(int x) {
+            this.x = x;
+        }
+
+        public int compareTo(PInt other) {
+            return (this.x % 2) - (other.x % 2);
+        }
+
+        public String toString() {
+            return "" + x;
+        }
+    }
+
     public static void main (String[] args) {
 	// HX-2026-03-04:
 	// Here you can use constructors in LnList.
 	// Please write minimal testing code for LnListInsertSort
 	// 1. Please sort a nearly sorted list of 1M elements
 	// 2. Please do parity-sorting to test that LnListInsertSort is stable
-		LnList<Integer> xs = new LnList<Integer>();
-        xs = new LnList<Integer>(5, xs);
-        xs = new LnList<Integer>(2, xs);
-        xs = new LnList<Integer>(4, xs);
-        xs = new LnList<Integer>(1, xs);
-        xs = new LnList<Integer>(3, xs);
+		
+        // nearly sorted list of 1M elements
+        LnList<Integer> big = new LnList<Integer>();
 
-        LnList<Integer> ys = LnListInsertSort(xs);
+        // build 0, 1, 2, 999999 with one small swap
+        for (int i = 999999; i >= 0; i--) {
+            if (i == 500000) {
+                big = new LnList<Integer>(500001, big);
+            } else if (i == 500001) {
+                big = new LnList<Integer>(500000, big);
+            } else {
+                big = new LnList<Integer>(i, big);
+            }
+        }
 
-        ys.foritm1(x -> System.out.print(x + " "));
+        // sort the nearly sorted list
+        LnList<Integer> bigSorted = LnListInsertSort(big);
+
+        // print first 10 elements to check result
+        System.out.println("First 10 elements:");
+        bigSorted.iforitm1((i, x) -> {
+            if (i < 10) System.out.print(x + " ");
+        });
+        System.out.println();
+
+        // parity sorting to test stability
+        LnList<PInt> ps = new LnList<PInt>();
+
+        // build list 0 1 2 3 4 5 6 7 8 9
+        for (int i = 9; i >= 0; i--) {
+            ps = new LnList<PInt>(new PInt(i), ps);
+        }
+
+        // print before sorting
+        System.out.println("Before parity sort:");
+        ps.foritm1(x -> System.out.print(x + " "));
+        System.out.println();
+
+        // sort by parity
+        LnList<PInt> psSorted = LnListInsertSort(ps);
+
+        // print after sorting
+        System.out.println("After parity sort:");
+        psSorted.foritm1(x -> System.out.print(x + " "));
         System.out.println();
     }
 }

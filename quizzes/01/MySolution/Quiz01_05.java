@@ -20,10 +20,9 @@ import java.util.function.ToIntBiFunction;
 import Library00.FnList.FnList;
 
 abstract public class Quiz01_05 {
-    public static <T>
-	FnList<T> someSort(FnList<T> xs, ToIntBiFunction<T,T> cmp) {
-		return Assign05_01.insertSort(xs, cmp);
-	}
+    public abstract <T>
+	FnList<T> someSort(FnList<T> xs, ToIntBiFunction<T,T> cmp);
+	
 	// HX-2025-10-15:
 	// This one is abstract, that is, not implemented
 
@@ -38,7 +37,7 @@ abstract public class Quiz01_05 {
         return res;
     }
     
-    public static<T>
+    public <T>
 	FnList<T> someRevStableSort
 	(FnList<T> xs, ToIntBiFunction<T,T> cmp) {
 	// HX-2025-10-15:

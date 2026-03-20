@@ -6,9 +6,16 @@ import java.util.function.ToIntBiFunction;
 
 import Library00.FnList.FnList;
 
-public class Quiz01_05_test {
+public class Quiz01_05_test extends Quiz01_05 {
+
+    public <T>
+    FnList<T> someSort(FnList<T> xs, ToIntBiFunction<T,T> cmp) {
+        return Assign05_01.insertSort(xs, cmp);
+    }
     public static void main (String args[]) {
 	// Your testing code for Quiz01_05
+        Quiz01_05_test q = new Quiz01_05_test();
+
         // build the list 0, 1, 2, ..., 999
         FnList<Integer> xs = new FnList<Integer>();
         for (int i = 999; i >= 0; i--) {
@@ -19,7 +26,7 @@ public class Quiz01_05_test {
         ToIntBiFunction<Integer,Integer> parityCmp =
             (x, y) -> (x % 2) - (y % 2);
 
-        FnList<Integer> ys = Quiz01_05.someRevStableSort(xs, parityCmp);
+        FnList<Integer> ys = q.someRevStableSort(xs, parityCmp);
 
         // print first 40 elements
         System.out.println("First 40 elements after reverse stable parity sort:");
