@@ -148,7 +148,7 @@ public class Assign07_02 {
         }
     }
 
-    // print the first n integers from an integer stream
+    // p -rint the first n integers from an integer stream
     private static
     void printFirstInts(LnStrm<Integer> xs, int n) {
         LnStrm<Integer> cur = xs;
