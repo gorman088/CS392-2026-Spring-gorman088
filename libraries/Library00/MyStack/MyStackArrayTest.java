@@ -1,4 +1,4 @@
-import Library.MyStack.*;
+import Library00.MyStack.*;
 
 public class MyStackArrayTest {
     public static void main(String[] args) {
@@ -11,8 +11,8 @@ public class MyStackArrayTest {
 	itms.push$exn(4);
 	itms.push$exn(5);
 	itms.System$out$print(); System.out.println();
-    	System.out.print("MyStackRev(");
-	itms.irforitm
+    	System.out.print("MyStack(");
+	itms.iforitm
 	(
           (i, itm) ->
 	  {

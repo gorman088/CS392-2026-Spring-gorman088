@@ -11,8 +11,8 @@ public class MyStackListTest {
 	itms.push$exn(4);
 	itms.push$exn(5);
 	itms.System$out$print(); System.out.println();
-    	System.out.print("MyStackRev(");
-	itms.irforitm
+    	System.out.print("MyStack(");
+	itms.iforitm
 	(
           (i, itm) ->
 	  {

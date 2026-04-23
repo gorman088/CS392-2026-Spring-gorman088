@@ -28,12 +28,4 @@ interface MyStack<T> {
     void foritm(Consumer<? super T> work);
     void iforitm(BiConsumer<Integer, ? super T> work);
 //
-    void rforitm(Consumer<? super T> work);
-    void irforitm(BiConsumer<Integer, ? super T> work);
-//
-/*
-    void forall(Predicate<? super T>);
-    void iforall(BiPredicate<? super T>);
-*/
-//
 } // end of [interface MyStack<T>{...}]
