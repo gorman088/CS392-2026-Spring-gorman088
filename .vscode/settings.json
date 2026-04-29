@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "libraries",
+        "quizzes/02/Code"
+    ],
+    "java.project.outputPath": "bin"
+}

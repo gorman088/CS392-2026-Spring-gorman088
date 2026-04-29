@@ -1,0 +1,85 @@
+############################################################
+
+Quiz02_00: 20 points
+
+############################################################
+
+Quiz02_01: 50 points
+(FnA1szLongestMonoSubsequence)
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing? 
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing. I used dynamic programming to find the longest leftmost ascending subsequence. For each index, I computed the longest valid subsequence starting there by checking all later indices. I also stored the next index to reconstruct the answer as a list of indices. I tested it on the example sequence to confirm that it returns the expected leftmost longest subsequence.
+  
+############################################################
+
+Quiz02_02: 50 points
+(sort1000WithNoRecursion)
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing. I implemented insertion sort without recursion. The algorithm scans through the array and inserts each element into the correct position among the elements before it by shifting larger elements to the right. I tested it on a small unsorted array and confirmed that the output is sorted.
+
+############################################################
+
+Quiz02_03: 50 points
+(Soduku_dfs_solve and Soduku_bfs_solve)
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing. I solved Game of 24 using a search tree. Each state stores the remaining terms. From each state, I choose two terms and combine them with +, -, *, or / to create the next state. BFS uses breadthfirst enumeration and DFS uses depthfirst enumeration. A solution is found when only one term remains and its value is 24. I tested the code on known good inputs 10, 10, 4, 4) and (5, 7, 7, 11).
+
+############################################################
+
+Please choose only ONE from Quiz02_04 and Quiz02_05.
+If unspecified, I assume by default that Quiz02_04 is
+chosen.
+
+############################################################
+
+Quiz02_04:
+30 points plus up to 20 bonus points
+(isAVL and genAVLBST)
+Please state the status of this question:
+1. Incomplete 
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I chose to solve this one with testing. For isAVL, I used a recursive helper that returns the height of a subtree if it is AVL, or -1 if it is not AVL. This checks each node only once, so the AVL test runs in linear time. For genAVLBST, I used the AVL maximal height idea which is to make the tree as tall as possible, each node should have one subtree of height h - 1 and the other of height h - 2. This gives the recurrence N(h) = 1 + N(h - 1) + N(h - 2). I tested isAVL on an empty tree and tested genAVLBST by printing the maximal height for 1 million nodes.
+
+############################################################
+
+Quiz02_05:
+30 points plus up to 20 bonus points
+(isRBT and genRedBlackBST)
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I skipped this one.
+
+############################################################
+
+Quiz02_06: 50 points
+(reroot and insert on DBST)
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved this one with testing. I implemented normal BST insertion first. If the key already exists, insertion returns false. otherwise, the new key is inserted as a leaf and the size fields are updated. For reroot, I randomly choose a node using the stored subtree sizes, then use left and right rotations to move that node up until it becomes the root. I tested that inorder traversal remains sorted before and after rerooting confirming that the tree is still a valid BST.
+
+############################################################
