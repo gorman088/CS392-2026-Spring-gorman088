@@ -1,0 +1,104 @@
+############################################################
+
+Final Exam of CS392X1, Spring, 2026
+Total = 220 points + 50 bonus points
+
+############################################################
+
+Final_00: NO points
+The code is given to you so that you can
+use it in your solutions to the following problems.
+
+############################################################
+
+Final_01: 20 points
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing. 
+I built a word stream from Final_00.pg2701_char$strmize(). The implementation skips all nonword characters,
+collects consecutive letters and apostrophes into a FnList<Character>, converts uppercase letters to
+lowercase, and treats both the normal apostrophe and the wide apostrophe used in pg2701.txt as valid word characters.
+I tested it by printing words from the beginning of pg2701.txt and checking cases such as MOBY-DICK being split into 
+moby and dick while whale’s remains one word.
+
+############################################################
+
+Final_02: 50 points
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing.
+I used Final_01.pg2701_word$strmize() to generate the stream of words, converted the stream into a FnList and then
+into a FnA1sz array wrapper and sorted the words alphabetically using MyLibrary quicksort. Since equal words are adjacent
+after sorting, I scanned the sorted array to create wordcount pairs. I then used MyLibrary array based mergesort to sort the
+pairs by descending count, breaking ties alphabetically by word. I tested the solution by printing the first 100 wordcount pairs.
+
+############################################################
+
+Final_03: 50 points
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing.
+I used Final_01.pg2701_word$strmize() to generate the stream of words then used my open addressing quadratic probing
+hashmap to count occurrences. I converted each word to a String key for simpler hashmap lookup and kept a FnList of unique words
+because the hashmap does not provide an iterator. After counting I converted the results into wordcount pairs sorted them by
+descending count with alphabetical tie breaking using MyLibrary mergeSort and tested by printing the first 100 pairs.
+
+############################################################
+
+Final_04: 50 points
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing.
+I used Final_01.pg2701_word$strmize() to generate the word stream and counted the words using an RBST based associative map
+adapted from Quiz02_06. The RBST stores string word keys and integer counts, uses parent child links and rotations, and can convert its
+contents into a FnList of wordcount pairs. I then sorted the pairs by descending count with alphabetical tie breaking using MyLibrary 
+mergeSort and tested by printing the first 100 pairs.
+
+############################################################
+
+Final_05: 50 points
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing. 
+I implemented n way merging by placing the head item from each sorted LnList into my array based priority queue. Since the
+priority queue is a max heap I wrapped each value in a helper object that reverses comparison so the smallest item is removed
+first. Each time the smallest item is removed I detach its existing node from its source list and link that node into the
+result so no new LnList nodes are created during merging. I then used this merge function to implement 100way merge sort and
+tested it by parity sorting the list [0,1,2,...,999999] confirming that the output begins with the even numbers in order.
+
+############################################################
+
+Final_06: 50 bonus points
+Please state the status of this question:
+1. Incomplete
+2. Solved with testing?
+3. Solved without testing?
+If solved, please BRIEFLY explain your strategy.
+
+I solved with testing.
+I generalized the non recursive no loop idea from Quiz01_03. Instead of manually writing a fixed number of
+bubble sort passes I defined non recursive helper functions that repeat a unit of work 1, 2, 4, 8, ... times. Using
+these helpers I implemented insertion sort by repeatedly inserting A[i] into the sorted prefix A[0...i-1] without the 
+loops or recursion. I tested the solution on integer and string arrays.
+
+############################################################
